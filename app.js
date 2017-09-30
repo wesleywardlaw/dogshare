@@ -52,7 +52,7 @@ app.use("/dogs", dogRoutes);
 app.use("/dogs/:id/comments", commentRoutes);
 
 
-app.listen(process.env.port||3090, process.env.IP, function(){
+app.listen(process.env.PORT||3090, process.env.IP, function(){
 	console.log("The DogShare Server has Started");
 });
 
