@@ -9,17 +9,18 @@ var express = require('express'),
 	Dog = require("./models/dog"),
 	Comment = require("./models/comment"),
 	User = require("./models/user"),
-	seedDB = require("./seeds");
+	seedDB = require("./seeds"),
+	
 
 //requiring routes
 var commentRoutes = require("./routes/comments"),
 	dogRoutes	  = require("./routes/dogs"),
 	indexRoutes   = require("./routes/index");
 
+var url = process.env.DATABASEURL||"mongodb://localhost/dogshare" ;
 
+mongoose.connect(url);
 
-// mongoose.connect("mongodb://localhost/dogshare");
-mongoose.connect("mongodb://wesuser:Snfrgh03!@ds157614.mlab.com:57614/dogshare", { useMongoClient: true, promiseLibrary: global.Promise });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
