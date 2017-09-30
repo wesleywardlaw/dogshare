@@ -42,7 +42,8 @@ router.post("/login", passport.authenticate("local",
 		{
 
 			successRedirect:"/dogs", 
-			failureRedirect:"/login"
+			failureRedirect:"/login",
+			failureFlash:true
 
 	}), function(req,res){
 
