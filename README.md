@@ -1,4 +1,4 @@
-#DogShare 
+# DogShare 
 
 DogShare is a web application that allows users to share their dogs with others.
 
